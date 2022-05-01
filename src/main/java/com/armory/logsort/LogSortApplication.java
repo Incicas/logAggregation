@@ -18,11 +18,11 @@ public class LogSortApplication {
 
 
         // read log files
-        final List<File> logFile1 = Arrays.asList(Objects.requireNonNull(new File("./src/main/resources/generated/logs/").listFiles()));
+        final List<File> logFiles = Arrays.asList(Objects.requireNonNull(new File("./src/main/resources/generated/logs/").listFiles()));
 
         final Instant start = Instant.now();
 
-        new LogPrinter().printLogs(logFile1);
+        new LogPrinter().printLogs(logFiles);
 
         final Instant finish = Instant.now();
         System.out.println("\nLog sorting and printing took: " + (finish.toEpochMilli() - start.toEpochMilli()) + "ms");
